@@ -20,11 +20,12 @@ fi
 pushd easyrsa
     ./easyrsa init-pki
     echo "CA" | ./easyrsa build-ca nopass
+    ./easyrsa build-serverClient-full CA nopass
     ./easyrsa gen-dh
 popd
 
 echo "ca \"$PWD/easyrsa/pki/ca.crt\"" > superboat.conf
-echo "cert \"$PWD/easyrsa/pki/issued/ca.crt\"" >> superboat.conf
+echo "cert \"$PWD/easyrsa/pki/ca.crt\"" >> superboat.conf
 echo "key \"$PWD/easyrsa/pki/private/ca.key\"" >> superboat.conf
 echo "dh \"$PWD/easyrsa/pki/dh.pem\"" >> superboat.conf
 echo "" >> superboat.conf

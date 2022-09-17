@@ -2,4 +2,4 @@ easyrsa
 clients
 *.ovpn
 !schema.ovpn
-*.conf
+*.log

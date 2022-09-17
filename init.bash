@@ -22,6 +22,8 @@ pushd easyrsa
     echo "CA" | ./easyrsa build-ca nopass
     ./easyrsa build-serverClient-full CA nopass
     ./easyrsa gen-dh
+    openvpn --genkey tls-auth ta.key
+    sudo useradd superboatvpn
 popd
 
 echo "ca \"$PWD/easyrsa/pki/ca.crt\"" > superboat.conf

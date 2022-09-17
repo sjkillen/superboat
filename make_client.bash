@@ -50,6 +50,10 @@ pushd "clients/$NAME"
     echo "<key>" >> "$NAME.ovpn"
     cat "$NAME.key" >> "$NAME.ovpn"
     echo "</key>" >> "$NAME.ovpn"
+
+    echo "<tls-auth>" >> "$NAME.ovpn"
+    cat "../../ta.key" >> "$NAME.ovpn"
+    echo "</tls-auth>" >> "$NAME.ovpn"
 popd
 
 popd

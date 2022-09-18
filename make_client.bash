@@ -33,6 +33,7 @@ mkdir -p "clients/$NAME"
 ./easyrsa build-client-full "$NAME" nopass
 ./easytls build-tls-crypt-v2-client server "$NAME"
 ./easytls inline-tls-auth "$NAME"
+cat ../schema.ovpn ./pki/easytls/"$NAME".inline > "../$NAME".ovpn
 
 # cp "pki/private/$NAME.key" "clients/$NAME"
 # cp "pki/issued/$NAME.crt" "clients/$NAME"

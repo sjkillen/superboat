@@ -27,7 +27,6 @@ pushd easyrsa
     echo "CA" | ./easyrsa build-ca nopass
     ./easyrsa build-server-full server nopass
     ./easyrsa gen-dh
-    sudo useradd superboatvpn
 popd
 
 # Easy TLS things
@@ -38,3 +37,6 @@ pushd easyrsa
     ./easytls build-tls-crypt-v2-server server
     ./easytls inline-tls-auth server
 popd
+
+# Make superboat.conf
+cat schema.conf ./easyrsa/pki/easytls/server.inline > superboat.conf

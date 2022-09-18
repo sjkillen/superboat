@@ -30,30 +30,31 @@ fi
 
 mkdir -p "clients/$NAME"
 
-./easyrsa gen-req "$NAME" nopass
-./easyrsa sign-req serverClient "$NAME"
+./easyrsa build-client-full "$NAME" nopass
+./easytls build-tls-crypt-v2-client server "$NAME"
+./easytls inline-tls-auth "$NAME"
 
-cp "pki/private/$NAME.key" "clients/$NAME"
-cp "pki/issued/$NAME.crt" "clients/$NAME"
-cp "pki/ca.crt" "clients/$NAME"
-cp ../schema.ovpn "clients/$NAME/$NAME.ovpn"
+# cp "pki/private/$NAME.key" "clients/$NAME"
+# cp "pki/issued/$NAME.crt" "clients/$NAME"
+# cp "pki/ca.crt" "clients/$NAME"
+# cp ../schema.ovpn "clients/$NAME/$NAME.ovpn"
 
-pushd "clients/$NAME"
-    echo "<ca>" >> "$NAME.ovpn"
-    cat ca.crt >> "$NAME.ovpn"
-    echo "</ca>" >> "$NAME.ovpn"
+# pushd "clients/$NAME"
+#     echo "<ca>" >> "$NAME.ovpn"
+#     cat ca.crt >> "$NAME.ovpn"
+#     echo "</ca>" >> "$NAME.ovpn"
 
-    echo "<cert>" >> "$NAME.ovpn"
-    cat "$NAME.crt" >> "$NAME.ovpn"
-    echo "</cert>" >> "$NAME.ovpn"
+#     echo "<cert>" >> "$NAME.ovpn"
+#     cat "$NAME.crt" >> "$NAME.ovpn"
+#     echo "</cert>" >> "$NAME.ovpn"
 
-    echo "<key>" >> "$NAME.ovpn"
-    cat "$NAME.key" >> "$NAME.ovpn"
-    echo "</key>" >> "$NAME.ovpn"
+#     echo "<key>" >> "$NAME.ovpn"
+#     cat "$NAME.key" >> "$NAME.ovpn"
+#     echo "</key>" >> "$NAME.ovpn"
 
-    echo "<tls-auth>" >> "$NAME.ovpn"
-    cat "../../ta.key" >> "$NAME.ovpn"
-    echo "</tls-auth>" >> "$NAME.ovpn"
-popd
+#     echo "<tls-auth>" >> "$NAME.ovpn"
+#     cat "../../ta.key" >> "$NAME.ovpn"
+#     echo "</tls-auth>" >> "$NAME.ovpn"
+# popd
 
 popd

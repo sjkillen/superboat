@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 # Initialize private keys and such
 
+# Good guide
+# https://community.openvpn.net/openvpn/wiki/EasyRSA3-OpenVPN-Howto
+
+
 # Change into the directory of this script
 # https://stackoverflow.com/questions/59895
 cd "$( dirname "${BASH_SOURCE[0]}" )" > /dev/null 2>&1
@@ -17,12 +21,20 @@ if [[ -d easyrsa/pki ]]; then
     fi
 fi
 
+# Easy RSA stuff
 pushd easyrsa
     ./easyrsa init-pki
     echo "CA" | ./easyrsa build-ca nopass
-    ./easyrsa build-serverClient-full CA nopass
+    ./easyrsa build-server-full server nopass
     ./easyrsa gen-dh
-    openvpn --genkey tls-auth ta.key
     sudo useradd superboatvpn
 popd
 
+# Easy TLS things
+pushd easyrsa
+    ./easytls init-tls
+    ./easytls build-tls-auth
+    ./easytls build-tls-crypt
+    ./easytls build-tls-crypt-v2-server server
+    ./easytls inline-tls-auth server
+popd

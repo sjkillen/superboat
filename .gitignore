@@ -3,3 +3,5 @@ clients
 *.ovpn
 !schema.ovpn
 *.log
+*.conf
+!schema.conf

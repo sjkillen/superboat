@@ -40,3 +40,6 @@ popd
 
 # Make superboat.conf
 cat schema.conf ./easyrsa/pki/easytls/server.inline > superboat.conf
+echo "<dh>" >> superboat.conf
+cat ./easyrsa/pki/dh.pem >> superboat.conf
+echo "</dh>" >> superboat.conf

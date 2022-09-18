@@ -5,8 +5,8 @@ Tools to build and access the ultimate hacker intranet
 1. Run install_deps.bash
 1. Run init.bash
 1. For each client, run "$ ./make_client.bash client_name"
-1. Start VPN with "$ openvpn --config superboat.conf"
-1. Connect a client (Running on separate machine than the VPN) with "$ openvpn --config client.ovpn"
+1. Start VPN with "$ openvpn superboat.conf"
+1. Connect a client (Running on separate machine than the VPN) with "$ openvpn client.ovpn"
 
 ### Resources
 - https://steamforge.net/wiki/index.php/How_to_configure_OpenVPN_to_resolve_local_DNS_%26_hostnames

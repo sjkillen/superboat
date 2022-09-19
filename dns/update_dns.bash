@@ -10,5 +10,6 @@ cd "$( dirname "${BASH_SOURCE[0]}" )" > /dev/null 2>&1
 while true; do
     cp ./hosts_schema /etc/hosts
     paste <(cut -f2 -d"," /ipp.txt)  <(cut -f1 -d"," /ipp.txt) >> /etc/hosts
+    paste <(cut -f2 -d"," /ipp.txt)  <(cut -f1 -d"," /ipp.txt | xargs printf "%s.superboat\n") >> /etc/hosts
     sleep 5
 done

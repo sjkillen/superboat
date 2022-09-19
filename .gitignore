@@ -5,3 +5,4 @@ clients
 *.log
 *.conf
 !schema.conf
+ipp.txt

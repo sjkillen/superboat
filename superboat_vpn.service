@@ -1,0 +1,16 @@
+[Unit]
+Description=Superboat VPN
+After=network-online.target
+Wants=network-online.target systemd-networkd-wait-online.service
+
+StartLimitIntervalSec=500
+StartLimitBurst=5
+
+[Service]
+Restart=on-failure
+RestartSec=5s
+
+ExecStart=/root/superboat/start_server.bash
+
+[Install]
+WantedBy=multi-user.target

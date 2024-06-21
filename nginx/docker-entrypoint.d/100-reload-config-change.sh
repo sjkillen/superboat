@@ -1,10 +1,9 @@
 
 # https://stackoverflow.com/q/64066263
 
-apt update -yq
-apt install -qy inotify-tools
+apt-get install -qy inotify-tools
 
-function watch() {
+watch() {
     while true; do
         inotifywait --exclude .swp -e create -e modify -e delete -e move /etc/nginx/routes
         nginx -t

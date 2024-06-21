@@ -1,7 +1,5 @@
-stream {
-     server {
-         server_name router.sjkillen.ca;
-         listen 80;
-         pass 127.0.0.1:8080;
-     }
+server {
+    server_name router.sjkillen.ca;
+    listen 80;
+    pass 127.0.0.1:8080;
 }

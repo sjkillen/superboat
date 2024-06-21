@@ -1,6 +1,8 @@
 
 # https://stackoverflow.com/q/64066263
 
+
+apt-get update -yq
 apt-get install -qy inotify-tools
 
 watch() {
@@ -9,7 +11,7 @@ watch() {
 
         if [ $? -ne 0 ]; then
             echo "inotify failed";
-            break;
+            exit 1;
         fi 
         nginx -t
         if [ $? -eq 0 ]; then

@@ -8,6 +8,10 @@ services:
         source: ./nginx.conf
         target: /etc/nginx/nginx.conf
         read_only: true
+      - type: bind
+        source: ./docker-entrypoint.d/100-reload-config-change.sh
+        target: /docker-entrypoint.d/100-reload-config-change.sh
+        read_only: true
       - "./routes:/etc/nginx/routes/"
       
   

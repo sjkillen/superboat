@@ -27,3 +27,4 @@ Tools to build and access the ultimate hacker intranet
 - Routing addresses
 - https://openvpn.net/community-resources/how-to/
 - https://openvpn.net/community-resources/ethernet-bridging/
+- https://stackoverflow.com/questions/64066263/docker-nginx-autoreload-on-config-file-changes

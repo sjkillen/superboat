@@ -9,8 +9,8 @@ services:
         target: /etc/nginx/nginx.conf
         read_only: true
       - type: volume
-        source: ./routes
-        target: /etc/nginx/routes
+        source: ./routes/
+        target: /etc/nginx/routes/
         read_only: false
       
   

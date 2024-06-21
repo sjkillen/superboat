@@ -9,7 +9,8 @@ Tools to build and access the ultimate hacker intranet
 1. Connect a client (Running on separate machine than the VPN) with "$ openvpn client.ovpn"
 
 ## Extra info
-- ipp.txt tracks IP addresses
+- Main gateway is usually 10.0.0.1
+- ipp.txt tracks IP addresses (usually increments of 1)
 
 ### Resources
 - https://steamforge.net/wiki/index.php/How_to_configure_OpenVPN_to_resolve_local_DNS_%26_hostnames

@@ -28,3 +28,4 @@ Tools to build and access the ultimate hacker intranet
 - https://openvpn.net/community-resources/how-to/
 - https://openvpn.net/community-resources/ethernet-bridging/
 - https://stackoverflow.com/questions/64066263/docker-nginx-autoreload-on-config-file-changes
+- https://serverfault.com/questions/1015880/extracting-http-host-header-from-nginx-stream-proxy

@@ -1,5 +1,4 @@
 # superboat
-Tools to build and access the ultimate hacker intranet
 
 ## Configuration
 - IP addresses must be set in schema.conf

@@ -1,5 +1,7 @@
 # superboat
 
+Note! udp4 note being used because it seems to have some issues with the CGNAT
+
 ## Configuration
 - IP addresses must be set in schema.conf
 - Working directorys must be changed in superboat_vpn.service

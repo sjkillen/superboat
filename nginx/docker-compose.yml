@@ -13,5 +13,4 @@ services:
         target: /docker-entrypoint.d/100-reload-config-change.sh
         read_only: true
       - "./routes:/etc/nginx/routes/"
-      
-  
+      - "./cmput350submissions:/cmput350submissions"
